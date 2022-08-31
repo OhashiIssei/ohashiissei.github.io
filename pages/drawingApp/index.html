@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>drawingApp</title>
+    <script src="script.js" defer></script>
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="toolbar">
+      <div class ="leftbar">
+        <input type="color" aria-label="select pen color" value="#ffffff">
+        <input class = "pensize" type="range" min="2" max="50" value="10" aria-label="select pen size">
+          <span class="pensizeOutput">10</span>
+          <span >ペン</span>
+        <input class = "erasesize" type="range" min="2" max="500" value="30" aria-label="select pen size">
+          <span class="erasesizeOutput">30</span>
+          <span >消し</span>
+      </div>
+      <div class ="modebar">
+        <button class="write">手書き</button>
+        <button class="line">図形</button>
+        <button class="erase">消しゴム</button>
+        <button class="select">選択</button>
+      </div>
+      <div class ="rightbar">
+        <button class="clear">全消去</button>
+        <button class="back">戻る</button>
+        <button class="undo">取り消す</button>
+      </div>
+    </div>
+
+    <div class="layers">
+      <canvas class="ui2-layer"></canvas>
+      <canvas class="ui-layer"></canvas>
+      <canvas class="active-layer"></canvas>
+      <canvas class="visible-layer"></canvas>
+      <canvas class="back-layer"></canvas>
+    </div>
+
+    <div class="play-grand">
+      
+    </div>
+    
+    
+    
+  </body>
+</html>

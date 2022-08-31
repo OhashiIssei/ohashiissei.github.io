@@ -1,0 +1,260 @@
+@import url(https://fonts.googleapis.com/css2?family=DotGothic16&display=swap);
+
+@font-face {
+  font-family: 'rubikitalic';
+  src: url('../webfontkit/rubik-italic-webfont.woff2') format('woff2'),
+       url('../webfontkit/rubik-italic-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'rubikregular';
+  src: url('../webfontkit/rubik-regular-webfont.woff2') format('woff2'),
+       url('../webfontkit/rubik-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+/* || 基本要素デザイン */
+
+html {
+    font-size: 10px; /* px means "pixels": the base font size is now 10 pixels high  */
+    font-family: 'DotGothic16', sans-serif;
+    background-color:  #294d2771;
+}
+
+h1 {
+    margin: 0;
+    padding: 20px 0;
+    text-shadow: 3px 3px 6px  #294d2771;
+    font-size: 3em;
+    /* font-family:"rubikregular",sertf; */
+  }
+
+h2 {
+    margin: 0;
+    padding: 20px 0;
+    font-size: 2em;
+    font-weight: bold;
+    /* font-family:"rubikregular",sertf; */
+  }
+  
+p, li {
+    font-size: 16px;
+    line-height: 2;
+    letter-spacing: 1px;
+  }
+
+body {
+    min-width: 200px;
+    margin: 0px;
+    height:100%;
+    background-color: #ffffff;
+    padding: 0 20px 20px 20px;
+    /* border: 5px solid black; */
+}
+
+/* || リンク */
+a{
+  color: #294d2771; 
+}
+
+a:link{
+  color: #294d2771; 
+}
+
+a:visited{
+  color: #294d2700; 
+}
+ 
+a:hover,a:focus{
+  text-decoration: none;
+}
+
+a:active{
+  background-color: #294d2771;
+  color:#ffffff;
+}
+
+
+
+
+/* || 画像 */
+
+.hanemojis li{
+  margin-left: 0px;
+}
+
+/* || 跳ね文字リスト */
+
+.hanelist{
+  list-style-type: none;
+  padding-left :0px;
+  margin-left:0px;
+}
+
+.hanelist li{
+  padding:0px 0px 0px 40px;
+  object-position: 0 0;
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: 24px 20px 
+}
+
+.hanelist li:nth-child(1){
+  background-image: url(../images/hanemoji1.gif);
+}
+
+.hanelist li:nth-child(2){
+  background-image: url(../images/hanemoji2.gif);
+}
+
+.hanelist li:nth-child(3){
+  background-image: url(../images/hanemoji3.gif);
+}
+
+.hanelist li:nth-child(4){
+  background-image: url(../images/hanemoji4.gif);
+}
+
+
+/* || ナビゲーション */
+
+nav ul{
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  grid-gap: 5vw;
+  padding :0;
+}
+
+nav li{
+  border-bottom: 1px solid #294d2771;
+}
+
+/* || フッター */
+
+footer{
+  border-top: 1px solid #294d2771;
+}
+
+footer ul{
+  list-style-type: none;
+  display:flex;
+}
+
+footer ul li{
+  margin-right: 20px;
+}
+
+/* || 右サイドレイアウト */
+
+.related{
+  border-top: 1px solid #294d2771;
+}
+
+@media screen and (min-width:550px){
+
+  
+  }
+  
+@media screen and (min-width:860px){
+
+  header {
+    width:100%;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    justify-content: left;
+    align-items: center;
+  }
+
+  main{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+  }
+
+  .related{
+    border-left: 1px solid #294d2771;
+    padding-left: 25px;
+    margin-left: 25px;
+    align-self: start;/* デフォルトのstrechを上書き */
+    position:sticky;
+    top:0px;
+  }
+
+}
+
+/* || 両サイドレイアウト */
+
+aside{
+  border-top: 1px solid #294d2771;
+}
+
+@media screen and (min-width:1000px){
+  body{
+    display: grid;
+    grid-template-areas:
+      "header header header"
+      "aside main related"
+      "footer footer footer"
+  }
+
+  header{
+    grid-area: header;
+  }
+
+  main{
+    grid-area: main;
+  }
+
+  aside{
+    grid-area: aside;
+    border-right: 1px solid #294d2771;
+  }
+
+  footer{
+    grid-area: footer;
+  }
+
+  /* .related{
+    grid-area: related;
+  } */
+
+  .mokuji{
+    padding-right: 25px;
+    margin-right: 25px;
+    border-left: #294d2771;
+    align-self: start;/* デフォルトのstrechを上書き */
+    position:sticky;
+    top:0px;
+  }
+}
+
+
+
+/* || 跳ね文字ギャラリー */
+
+.hanemojis img {
+  /* display: block; */
+  padding: 200px auto;
+  margin-top: 800px;;
+  margin-bottom: 10px;;
+}
+
+.hanemojis{
+  list-style-type: none;
+  display:grid;
+  /* display: inline-flex; */
+  /* display: block; */
+  justify-content: center;
+  /* align-items: center;
+  flex-wrap: wrap */
+  /* grid-gap: 10px; */
+  /* grid-template-columns: repeat(auto-fill,minmax(100px,1fr)); */
+  margin-bottom:1000px;
+}

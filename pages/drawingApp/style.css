@@ -1,0 +1,133 @@
+@import url(https://fonts.googleapis.com/css2?family=DotGothic16&display=swap);
+
+@font-face {
+  font-family: 'rubikitalic';
+  src: url('../webfontkit/rubik-italic-webfont.woff2') format('woff2'),
+       url('../webfontkit/rubik-italic-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'rubikregular';
+  src: url('../webfontkit/rubik-regular-webfont.woff2') format('woff2'),
+       url('../webfontkit/rubik-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+/* || 基本要素デザイン */
+
+html {
+    font-size: 10px; /* px means "pixels": the base font size is now 10 pixels high  */
+    font-family: 'DotGothic16', sans-serif;
+    background-color:  #294d2771;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  /* background: #ccc; */
+}
+
+/* .layers{
+  height:50000px;
+} */
+
+
+/* ツールバーのデザイン */
+
+.toolbar{
+  width: 100%;
+  height: 75px;
+  background: #ccc;
+  padding: 5px;
+  display: flex;
+  /* align-items: flex-end; */;
+}
+
+
+
+.leftbar {
+  width: 150px;
+  flex:1;
+}
+
+.modebar {
+  width: 150px;
+  display: flex;
+  flex:1
+}
+
+.rightbar {
+  width: 150px;
+  display: flex;
+  flex:1
+}
+
+input[type="color"], button {
+  width: 90%;
+  margin: 0 auto;
+  display:white;
+}
+
+input[type="range"] {
+  width: 70%;
+}
+
+/* input[type="erasesize"] {
+  width: 70%;
+} */
+
+span {
+ position: relative;
+ bottom: 5px;
+}
+
+/* カーソルデザイン変更 */
+
+.write{
+  cursor: pointer
+}
+
+.shape{
+  cursor: crosshair
+}
+
+.erase{
+  cursor:grab
+}
+
+.select{
+  cursor:crosshair
+}
+
+button[status="on"] {
+  background-color: gray;
+}
+
+
+
+/* レイヤーのデザイン */
+
+/* .layer{
+ position:relateve
+} */
+canvas{
+  position:absolute;
+  touch-action: none
+}
+.ui2-layer{ z-index: 5}
+.ui-layer{ z-index: 4}
+.active-layer{ z-index: 3}
+.vesible-layer{ z-index: 2}
+.back-layer{ z-index: 1}
+
+
+
+.play-grand{
+  position:absolute;
+  height:1000px
+}
