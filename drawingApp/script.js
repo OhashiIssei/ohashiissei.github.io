@@ -230,7 +230,7 @@ Btns[4].addEventListener("click",function(e){
   nonActiveAll()
   visibleCtx.clear()
   visibleCtx.fillStyle = 'rgb(0,0,0)';
-  visibleCtx.fillRect(-width/3,-height/3,width,height);
+  visibleCtx.fillRect(-width/3,-height/3,width*5/3,height*5/3);
   visibleCtx.pathes = []
   console.log("全消去")
 });
@@ -329,8 +329,8 @@ layers.addEventListener('pointerdown', function(e){
     break;
 
   case "selected":
-    activeImage = activeCtx.getImageData(-width/3,-height/3,width,height)
-    uiImage = uiCtx.getImageData(-width/3,-height/3,width,height)
+    activeImage = activeCtx.getImageData(-width/3,-height/3,width*5/3,height*5/3)
+    uiImage = uiCtx.getImageData(-width/3,-height/3,width*5/3,height*5/3)
     backCtx.lineWidth = nagenawaWidth+Number(sizePicker.value);
     for(let i=0;i<activeCtx.pathes.length;i++){
       if(backCtx.isPointInStroke(activeCtx.pathes[i],e.x,e.y-menuHeight)){
@@ -348,7 +348,7 @@ layers.addEventListener('pointerdown', function(e){
     case uiCtx.isPointInPath(uiCtx.pathes[5],e.x,e.y-menuHeight,"nonzero"):
       uiCtx.clear()
       ui2Ctx.draw(uiCtx.pathes[5])
-      ui2Image = ui2Ctx.getImageData(-width/3,-height/3,width,height)
+      ui2Image = ui2Ctx.getImageData(-width/3,-height/3,width*5/3,height*5/3)
       uiCtx.pathes.pop()
       for(let i =0;i<uiCtx.pathes.length;i++){
         uiCtx.display(uiCtx.pathes[i])
@@ -370,8 +370,8 @@ layers.addEventListener('pointerdown', function(e){
       chengeToMode("scale")
       break;
     case uiCtx.isPointInPath(uiCtx.pathes[4],e.x,e.y-menuHeight,"nonzero"):
-      activeImage = activeCtx.getImageData(-width/3,-height/3,width,height)
-      uiImage = uiCtx.getImageData(-width/3,-height/3,width,height)
+      activeImage = activeCtx.getImageData(-width/3,-height/3,width*5/3,height*5/3)
+      uiImage = uiCtx.getImageData(-width/3,-height/3,width*5/3,height*5/3)
       for(let i=0;i<activeCtx.pathes.length;i++){
         const copy = activeCtx.pathes[i]
         copy.id = id;
@@ -381,8 +381,8 @@ layers.addEventListener('pointerdown', function(e){
       chengeToMode("copy")
       break;
     case uiCtx.isPointInPath(uiCtx.pathes[0],e.x,e.y-menuHeight,"nonzero"):
-      activeImage = activeCtx.getImageData(-width/3,-height/3,width,height)
-      uiImage = uiCtx.getImageData(-width/3,-height/3,width,height)
+      activeImage = activeCtx.getImageData(-width/3,-height/3,width*5/3,height*5/3)
+      uiImage = uiCtx.getImageData(-width/3,-height/3,width*5/3,height*5/3)
       mode ="translate"
       console.log(mode)
       break;
@@ -725,7 +725,7 @@ CanvasRenderingContext2D.prototype.draw = function(path){
 }
 
 CanvasRenderingContext2D.prototype.clear = function(){
-  this.clearRect(-width/3,-height/3,width,height)
+  this.clearRect(-width/3,-height/3,width*5/3,height*5/3)
 }
 
 CanvasRenderingContext2D.prototype.delete =  function(path){
@@ -733,7 +733,7 @@ CanvasRenderingContext2D.prototype.delete =  function(path){
   this.pathes.splice(index,1)
   this.clear()
   this.fillStyle = 'rgb(0,0,0)';
-  this.fillRect(-width/3,-height/3,width,height);
+  this.fillRect(-width/3,-height/3,width*5/3,height*5/3);
   for(let i=0;i<this.pathes.length;i++){
     this.display(this.pathes[i])
   }
