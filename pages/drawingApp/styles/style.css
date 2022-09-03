@@ -52,18 +52,18 @@ body {
 
 .leftbar {
   width: 150px;
-  flex:1;
+  flex:5;
 }
 
 .modebar {
   width: 150px;
   display: flex;
-  flex:1
+  flex:5
 }
 
-.rightbar {
+.otherbar {
   width: 150px;
-  display: flex;
+  /* display: flex; */
   flex:1
 }
 
@@ -122,12 +122,6 @@ canvas{
 .ui2-layer{ z-index: 5}
 .ui-layer{ z-index: 4}
 .active-layer{ z-index: 3}
-.vesible-layer{ z-index: 2}
-.back-layer{ z-index: 1}
-
-
-
-.play-grand{
-  position:absolute;
-  height:1000px
-}
+.visible-layer{ z-index: 2}
+.back-layer{ z-index: 0}
+.symurator{ z-index: 1}
