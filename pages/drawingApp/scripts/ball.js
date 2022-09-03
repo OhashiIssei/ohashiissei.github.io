@@ -12,10 +12,10 @@ canvas.height = window.innerHeight;
 const Juuryoku=0
 
 const g = 1
-const boundKeisuu = 0.5
-const kabeKeisuu = 0.5
+const boundKeisuu = 0.9
+const kabeKeisuu = 0.9
 const seisiMax = 2
-const seisiHiritu=1
+const seisiHiritu = 1
 const numberOfBall = 1000
 const minSize = 3;
 const maxSize = 3

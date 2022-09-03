@@ -631,6 +631,22 @@ layers.addEventListener('pointerup', function(e){
     break
 
   case "ellipse":
+    path.addId(colorPicker.value,sizePicker.value,[])//ポイント情報が意味を成していない
+    activeCtx.transformPathes(center,complex)
+    activeCtx.pathes[0].lineWidth = sizePicker.value
+    
+    for(let i=0;i<360;i++){
+      if(Math.abs(w/h-1)<0.25){
+        activeCtx.pathes[0].points.push([center[0]+(w+h)/4*Math.cos(degToRad(i)),center[1]+(w+h)/4*Math.sin(degToRad(i))])
+      }else{
+        activeCtx.pathes[0].points.push([center[0]+w/2*Math.cos(degToRad(i)),center[1]+h/2*Math.sin(degToRad(i))])
+      }
+    }
+    nonActiveAll()
+    changeToMode("write")
+    // createUi()
+    break;
+
   case "curve":
     path.addId(colorPicker.value,sizePicker.value,[])//ポイント情報が意味を成していない
     activeCtx.transformPathes(center,complex)
@@ -682,7 +698,6 @@ layers.addEventListener('pointerup', function(e){
     case "translate":
     case "copy":
       //uiCtxの移動か、selectPathの移動か
-      
       activeCtx.clear()//activeCtxの変換
       activeCtx.canvas.style.removeProperty("transform")
       for(let i=0;i<activeCtx.pathes.length;i++){
