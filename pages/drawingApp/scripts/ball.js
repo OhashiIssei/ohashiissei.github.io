@@ -9,7 +9,7 @@ canvas.height = window.innerHeight;
 
 // シミュレーション定数
 
-const Juuryoku=0.5
+const Juuryoku=0
 
 const g = 1
 const boundKeisuu = 0.5
